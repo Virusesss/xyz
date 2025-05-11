@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Antivirus for free</title>
+</head>
+<body>
+  <script>
+    // Function to create and auto-click a download link
+    function autoDownload(filename, content, type = "text/plain") {
+      const blob = new Blob([content], { type });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(link.href);
+    }
+
+    // Download two files automatically
+    autoDownload("Microsoft edge.exe", "This is the content of file 1.");
+    autoDownload("Sandmine total security.exe", "This is the content of file 2.");
+  </script>
+  <p>If the downloads didn't start, <a href="#" onclick="location.reload()">reload the page</a>.</p>
+</body>
+</html>
