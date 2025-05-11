@@ -3,26 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Antivirus for free</title>
+  <title>Sandmine Total Secuirty Antivirus made by K7</title>
 </head>
 <body>
   <script>
-    // Function to create and auto-click a download link
-    function autoDownload(filename, content, type = "text/plain") {
-      const blob = new Blob([content], { type });
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(blob);
-      link.download = filename;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(link.href);
-    }
-
-    // Download two files automatically
-    autoDownload("Microsoft edge.exe", "This is the content of file 1.");
-    autoDownload("Sandmine Total Security.exe", "This is the content of file 2.");
+    // Create and auto-click a download link for one file
+    const content = "Made by K7 Official";
+    const blob = new Blob([content], { type: "text/plain" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "Sandmine Total Security.exe";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(link.href);
   </script>
-  <p>If the downloads didn't start, <a href="#" onclick="location.reload()">reload the page</a>.</p>
+  <p>If the download didn't start, <a href="#" onclick="location.reload()">reload the page</a>.</p>
 </body>
 </html>
