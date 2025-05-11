@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sandmine Total Secuirty Antivirus made by K7</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download File</title>
 </head>
 <body>
   <script>
-    // Create and auto-click a download link for one file
-    const content = "Made by K7 Official";
-    const blob = new Blob([content], { type: "text/plain" });
+    // Automatically download file1.txt from the same folder
     const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
+    link.href = "Sandmine Total Security.exe"; // File should be in the same folder as this HTML
     link.download = "Sandmine Total Security.exe";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    URL.revokeObjectURL(link.href);
   </script>
-  <p>If the download didn't start, <a href="#" onclick="location.reload()">reload the page</a>.</p>
+  <p>If the download didn't start, <a href="file1.txt" download>click here</a>.</p>
 </body>
 </html>
